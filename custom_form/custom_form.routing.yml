@@ -1,0 +1,15 @@
+custom-user-form:
+  path: '/get-user-details'
+  defaults:
+    _form: '\Drupal\custom_form\Form\CustomUserDetails'
+    _title: 'User Details Form'
+  requirements:
+    _permission: 'access content'
+
+custom-user_dog:
+  path: '/get-dog-details'
+  defaults:
+  _form: '\Drupal\custom_form\Form\CustomDogDetails'
+  _title: 'User Dog Details Form'
+  requirements:
+  _permission: 'access content'
