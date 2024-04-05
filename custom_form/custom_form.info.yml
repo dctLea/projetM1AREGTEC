@@ -3,4 +3,3 @@ description: Gets user details
 type: module
 core_version_requirement: ^9 | ^10
 version: '1.0'
-

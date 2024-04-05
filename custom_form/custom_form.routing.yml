@@ -1,4 +1,4 @@
-custom-user-form:
+custom_form.custom_user_details_form:
   path: '/get-user-details'
   defaults:
     _form: '\Drupal\custom_form\Form\CustomUserDetails'
@@ -6,10 +6,10 @@ custom-user-form:
   requirements:
     _permission: 'access content'
 
-custom-user_dog:
-  path: '/get-dog-details'
+custom_form.My_customTESTMLR:
+  path: '/coucou-testMLR'
   defaults:
-  _form: '\Drupal\custom_form\Form\CustomDogDetails'
-  _title: 'User Dog Details Form'
+    _form: '\Drupal\custom_form\Form\CustomTESTMLR'
+    _title: 'TestForm'
   requirements:
-  _permission: 'access content'
+    _permission: 'access content'

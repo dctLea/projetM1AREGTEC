@@ -5,40 +5,22 @@ namespace Drupal\custom_form\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class CustomUserDetails extends FormBase {
+class CustomTESTMLR extends FormBase {
     public function getFormId() {
-        return "custom_user_details_form";
+        return "My_customTESTMLR";
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
-        $form['prenom'] = [
+        $form['xxx'] = [
             '#type' => 'textfield',
-            '#title' => 'Prenom',
+            '#title' => 'XXX',
             '#required' => true,
         ];
 
-        $form['nom'] = [
+        $form['yyy'] = [
             '#type' => 'textfield',
-            '#title' => 'Nom',
-            '#required' => true,
-        ];
-
-        $form['telephone'] = [
-            '#type' => 'textfield',
-            '#title' => 'Telephone',
-            '#required' => true,
-        ];
-
-        $form['email'] = [
-            '#type' => 'email',
-            '#title' => 'Email',
-            '#required' => true,
-        ];
-
-        $form['adresse'] = [
-            '#type' => 'textfield',
-            '#title' => 'Adresse',
+            '#title' => 'YYY',
             '#required' => true,
         ];
 
@@ -46,8 +28,8 @@ class CustomUserDetails extends FormBase {
             '#type' => 'select',
             '#title' => 'Race',
             '#options' => [
-                "Oui" => "oui",
-                "Non" => "non"
+                "yo" => "oui",
+                "nai" => "non"
             ],
         ];
 
@@ -67,13 +49,10 @@ class CustomUserDetails extends FormBase {
     {
         \Drupal::messenger()->addMessage("User details submitted successfully");
         $values = $form_state->getValues();
-        \Drupal::database()->insert('user_details')->fields([
-            'Prenom' => $values['prenom'],
-            'Nom' => $values['nom'],
-            'Telephone' => $values['telephone'],
-            'Mail' => $values['email'],
-            'Adresse' => $values['adresse'], 
-            'Race' => $values['race'],
+        \Drupal::database()->insert('test_mlr')->fields([
+            'XXX' => $values['xxx'],
+            'YYY' => $values['yyy'],
+            'RACE' => $values['race'],
         ])->execute();
     }
 }
