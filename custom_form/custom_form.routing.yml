@@ -13,3 +13,39 @@ custom_form.My_customTESTMLR:
     _title: 'TestForm'
   requirements:
     _permission: 'access content'
+
+# Formulaire numéro 1
+custom_form.form_inscription:
+  path: '/user-inscription'
+  defaults:
+    _form: '\Drupal\custom_form\Form\CustomUserInscription'
+    _title: 'Formulaire d inscription'
+  requirements:
+    _permission: 'access content' 
+
+# Formulaire numéro 2
+custom_form.form_information_perso:
+  path: '/user-informations'
+  defaults:
+    _form: '\Drupal\custom_form\Form\CustomUserInformationPerso'
+    _title: 'Formulaire d inscription'
+  requirements:
+    _permission: 'access content' 
+
+# Formulaire numéro 3
+custom_form.form_dog_information:
+  path: '/dog-informations'
+  defaults:
+    _form: '\Drupal\custom_form\Form\CustomDogInformation'
+    _title: 'Formulaire d identification du chien'
+  requirements:
+    _permission: 'access content' 
+
+    # Formulaire numéro 4
+custom_form.form_dog_information:
+  path: '/dog-caracteristics'
+  defaults:
+    _form: '\Drupal\custom_form\Form\CustomDogCharacteristics'
+    _title: 'Formulaire des caracteristics physique du chien'
+  requirements:
+    _permission: 'access content' 
