@@ -5,50 +5,35 @@ namespace Drupal\custom_form\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
-class CustomUserDetails extends FormBase {
+class CustomUserInformationPerso extends FormBase {
     public function getFormId() {
-        return "custom_user_details_form";
+        return "form_information_perso";
     }
 
     public function buildForm(array $form, FormStateInterface $form_state) {
 
-        $form['prenom'] = [
+        $form['Prenom'] = [
             '#type' => 'textfield',
-            '#title' => 'Prenom',
+            '#title' => 'Prénom',
             '#required' => true,
         ];
 
-        $form['nom'] = [
+        $form['Nom'] = [
             '#type' => 'textfield',
             '#title' => 'Nom',
             '#required' => true,
         ];
 
-        $form['telephone'] = [
+        $form['Telephone'] = [
             '#type' => 'textfield',
-            '#title' => 'Telephone',
+            '#title' => 'Téléphone',
             '#required' => true,
         ];
-
-        $form['email'] = [
-            '#type' => 'email',
-            '#title' => 'Email',
-            '#required' => true,
-        ];
-
-        $form['adresse'] = [
+        
+        $form['Adresse'] = [
             '#type' => 'textfield',
             '#title' => 'Adresse',
             '#required' => true,
-        ];
-
-        $form['race'] = [
-            '#type' => 'select',
-            '#title' => 'Race',
-            '#options' => [
-                "Oui" => "oui",
-                "Non" => "non"
-            ],
         ];
 
         $form['Envoyer'] = [
@@ -67,13 +52,14 @@ class CustomUserDetails extends FormBase {
     {
         \Drupal::messenger()->addMessage("User details submitted successfully");
         $values = $form_state->getValues();
-        \Drupal::database()->insert('user_details')->fields([
-            'Prenom' => $values['prenom'],
-            'Nom' => $values['nom'],
-            'Telephone' => $values['telephone'],
-            'Mail' => $values['email'],
-            'Adresse' => $values['adresse'], 
-            'Race' => $values['race'],
+        \Drupal::database()->insert('usr_user')->fields([
+            'Usr_Firstname' => $values['Prenom'],
+            'Usr_Name' => $values['Nom']//,
+            //A modifier en fonction du nom des colonnes de la table usr_user
+            //'Usr_Phone' => $values['Telephone'],
+            //'Usr_Address' => $values['Adresse']
         ])->execute();
+
     }
 }
+
